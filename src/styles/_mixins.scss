@@ -1,0 +1,12 @@
+@mixin up($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin card-surface {
+  background: $surface;
+  border: 1px solid rgba(228, 231, 236, 0.9);
+  border-radius: $radius-lg;
+  box-shadow: 0 1px 3px rgba(16, 24, 40, 0.04);
+}
