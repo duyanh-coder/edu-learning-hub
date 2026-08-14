@@ -1,0 +1,4 @@
+id,subject_id,title,description,week,duration,url,recorded_at,active
+REC001,SUB001,Week 05 - Grammar 2,Conditional Sentences,05,01:42:18,https://drive.google.com/,2026-08-10,TRUE
+REC002,SUB003,Week 04 - Listening & Speaking 2,Jobs and Career,04,01:35:42,https://drive.google.com/,2026-08-03,TRUE
+REC003,SUB002,Week 03 - Reading 2,Global Warming,03,01:28:31,https://drive.google.com/,2026-07-27,TRUE

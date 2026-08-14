@@ -1,0 +1,4 @@
+id,subject_id,date,start_time,end_time,room,active
+SCH001,SUB001,2026-08-13,08:00,09:30,Phòng học online 01,TRUE
+SCH002,SUB003,2026-08-13,10:00,11:30,Phòng học online 02,TRUE
+SCH003,SUB002,2026-08-13,13:30,15:00,Phòng học online 01,TRUE
