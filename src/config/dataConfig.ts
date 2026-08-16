@@ -12,5 +12,7 @@ export const dataConfig = {
     recordings: 'Recordings',
     schedule: 'Schedule',
     announcements: 'Announcements',
+    academicTerms: 'AcademicTerms',
+    settings: 'Settings',
   },
 };

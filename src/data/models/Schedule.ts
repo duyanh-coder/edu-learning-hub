@@ -6,4 +6,6 @@ export interface ScheduleItem {
   endTime: string;
   room?: string;
   active: boolean;
+  academicYear?: string;
+  semester?: string;
 }

@@ -1,5 +1,6 @@
 import { Avatar, Badge, Button, Dropdown, Input } from 'antd';
 import { Bell, ChevronDown, Menu as MenuIcon, Search } from 'lucide-react';
+import { AcademicTermSelect } from './AcademicTermSelect';
 import { colors } from '../../theme/colors';
 import { appConfig } from '../../config/appConfig';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -38,6 +39,8 @@ export function AppHeader({ onMenuClick }: AppHeaderProps) {
           <div className="caption">{title} · {appConfig.institution.shortName}</div>
         </div>
       </div>
+
+      <div className="header-context"><AcademicTermSelect /></div>
 
       <div className="header-actions">
         <Input

@@ -7,4 +7,6 @@ export interface DocumentItem {
   url: string;
   updatedAt: string;
   active: boolean;
+  academicYear?: string;
+  semester?: string;
 }

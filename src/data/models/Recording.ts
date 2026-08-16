@@ -8,4 +8,6 @@ export interface Recording {
   url: string;
   recordedAt: string;
   active: boolean;
+  academicYear?: string;
+  semester?: string;
 }

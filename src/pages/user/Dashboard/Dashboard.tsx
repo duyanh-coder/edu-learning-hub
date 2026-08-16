@@ -18,6 +18,7 @@ import { StatCard } from '../../../components/ui/StatCard';
 import { appConfig } from '../../../config/appConfig';
 import { useNavigate } from 'react-router-dom';
 import { learningDataProvider } from '../../../data/providers';
+import { useAcademicTerm } from '../../../contexts/AcademicTermContext';
 import type { Announcement } from '../../../data/models/Announcement';
 import type { DocumentItem } from '../../../data/models/Document';
 import type { Recording } from '../../../data/models/Recording';
@@ -83,21 +84,23 @@ export default function Dashboard() {
   const [announcements, setAnnouncements] = useState<Announcement[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const { selectedTerm, loading: termLoading } = useAcademicTerm();
 
   useEffect(() => {
     let mounted = true;
 
     const loadDashboardData = async () => {
       try {
+        if (termLoading || !selectedTerm) return;
         setLoading(true);
         setError(null);
         const [subjectData, documentData, recordingData, scheduleData, announcementData] =
           await Promise.all([
-            learningDataProvider.getSubjects(),
-            learningDataProvider.getDocuments(),
-            learningDataProvider.getRecordings(),
-            learningDataProvider.getSchedule(),
-            learningDataProvider.getAnnouncements(),
+            learningDataProvider.getSubjects(selectedTerm),
+            learningDataProvider.getDocuments(selectedTerm),
+            learningDataProvider.getRecordings(selectedTerm),
+            learningDataProvider.getSchedule(selectedTerm),
+            learningDataProvider.getAnnouncements(selectedTerm),
           ]);
 
         if (!mounted) return;
@@ -116,7 +119,7 @@ export default function Dashboard() {
 
     void loadDashboardData();
     return () => { mounted = false; };
-  }, []);
+  }, [selectedTerm, termLoading]);
 
   const subjectStats = useMemo(() =>
     subjects.map((subject) => ({

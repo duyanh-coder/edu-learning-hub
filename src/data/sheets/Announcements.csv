@@ -1,4 +1,3 @@
-id,title,content,type,published_at,active
-ANN001,Tài liệu Grammar in Use - Unit 5.pdf đã được cập nhật,,Tài liệu,2026-08-13T10:00:00+07:00,TRUE
-ANN002,Thông báo lịch thi giữa kỳ,,Thông báo,2026-08-13T08:00:00+07:00,TRUE
-ANN003,Record buổi học Week 04 đã được cập nhật,,Record,2026-08-12T10:00:00+07:00,TRUE
+id,title,content,type,published_at,active,academic_year,semester
+ANN001,Tài liệu mới,Đã cập nhật tài liệu tuần 05,document,2026-08-10,TRUE,2025-2026,HK02
+ANN002,Record mới,Đã cập nhật record buổi học,recording,2026-08-11,TRUE,2025-2026,HK02

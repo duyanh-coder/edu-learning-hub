@@ -5,4 +5,6 @@ export interface Subject {
   description?: string;
   color?: string;
   active: boolean;
+  academicYear?: string;
+  semester?: string;
 }

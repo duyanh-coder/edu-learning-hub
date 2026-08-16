@@ -1,11 +1,18 @@
-# Google Sheet templates
+# Google Sheets templates
 
-Copy each CSV into a matching Google Sheets tab:
+## Required sheets
+- AcademicTerms
+- Subjects
+- Documents
+- Recordings
+- Schedule
+- Announcements
+- Settings (optional for class/program context)
 
-- Subjects.csv → `Subjects`
-- Documents.csv → `Documents`
-- Recordings.csv → `Recordings`
-- Schedule.csv → `Schedule`
-- Announcements.csv → `Announcements`
+## Academic term
+Add `academic_year` and `semester` to content sheets. The UI selects the active term from `AcademicTerms` and filters content accordingly.
 
-These files are templates only; the application currently uses `MockLearningDataProvider` by default.
+`AcademicTerms` columns:
+`id, academic_year, semester, label, is_current, active`
+
+Only one active term should normally have `is_current=TRUE`.

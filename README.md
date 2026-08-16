@@ -1,56 +1,47 @@
 # EDU Learning Hub
 
-A reusable learning resource hub for universities and distance-learning programs.
+Prototype 04 — User Subjects + Dynamic Academic Term.
 
-## Prototype 01
-
-Current milestone focuses on the application foundation and User UI:
-
+## Stack
 - React + TypeScript + Vite
-- Ant Design + Lucide React
-- SCSS + design tokens
-- Environment-driven institution branding
-- Feature flags
-- User responsive layout
-- Client-side routing
-- Dashboard mock data
+- Ant Design
+- SCSS
+- React Router
+- Google Sheets CSV read adapter
 
-## Project structure
+## Dynamic Academic Term
+The active academic year/semester is loaded from the `AcademicTerms` sheet.
+The UI defaults to `is_current=TRUE`, remembers the user's selection in localStorage, and filters content by `academic_year` + `semester`.
 
-```text
-src/
-├── components/       # Reusable UI and layout components
-├── config/           # Environment and application configuration
-├── layouts/          # User/Admin application shells
-├── pages/            # Feature pages
-├── router/           # Application routes
-├── services/         # API and external service adapters
-├── theme/            # Design tokens and Ant Design theme
-├── types/            # Shared TypeScript models
-└── styles/           # Global SCSS
+## Google Sheets
+Configure in `.env`:
+
+```env
+VITE_DATA_PROVIDER=google-sheets
+VITE_GOOGLE_SHEET_ID=YOUR_SPREADSHEET_ID
+VITE_GOOGLE_SHEET_URL=https://docs.google.com/spreadsheets/d/YOUR_SPREADSHEET_ID/edit
 ```
 
-## Local development
+Required sheets:
+- AcademicTerms
+- Subjects
+- Documents
+- Recordings
+- Schedule
+- Announcements
+
+`Settings` is optional and stores class/program context such as program, course, class, and training mode.
+
+## Development
 
 ```bash
 npm install
 npm run dev
 ```
 
-Type check:
-
-```bash
-npm run typecheck
-```
-
 Production build:
 
 ```bash
+npm run typecheck
 npm run build
 ```
-
-## Configuration
-
-Copy `.env.example` to `.env` and adjust institution-specific values. Do not commit `.env` or secrets.
-
-The frontend uses `VITE_*` variables only for public/runtime-build configuration. Database credentials, API secrets, Google client secrets and JWT secrets belong to the backend environment and must never be exposed through `VITE_*` variables.

@@ -1,4 +1,3 @@
-id,subject_id,title,description,week,duration,url,recorded_at,active
-REC001,SUB001,Week 05 - Grammar 2,Conditional Sentences,05,01:42:18,https://drive.google.com/,2026-08-10,TRUE
-REC002,SUB003,Week 04 - Listening & Speaking 2,Jobs and Career,04,01:35:42,https://drive.google.com/,2026-08-03,TRUE
-REC003,SUB002,Week 03 - Reading 2,Global Warming,03,01:28:31,https://drive.google.com/,2026-07-27,TRUE
+id,subject_id,title,description,week,duration,url,recorded_at,active,academic_year,semester
+REC001,SUB001,Buổi 01 - Grammar 2,Review Unit 01,01,01:32:15,https://drive.google.com/,2026-08-10,TRUE,2025-2026,HK02
+REC002,SUB003,Buổi 01 - Listening 2,Topic Jobs,01,01:45:20,https://drive.google.com/,2026-08-10,TRUE,2025-2026,HK02

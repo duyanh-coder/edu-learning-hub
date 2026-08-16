@@ -5,4 +5,6 @@ export interface Announcement {
   type: string;
   publishedAt: string;
   active: boolean;
+  academicYear?: string;
+  semester?: string;
 }

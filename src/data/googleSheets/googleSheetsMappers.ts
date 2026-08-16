@@ -1,3 +1,4 @@
+import type { AcademicTerm } from '../models/AcademicTerm';
 import type { Announcement } from '../models/Announcement';
 import type { DocumentItem } from '../models/Document';
 import type { Recording } from '../models/Recording';
@@ -20,6 +21,16 @@ const booleanValue = (value: string | undefined, fallback = true) => {
   return value.toLowerCase() === 'true' || value === '1' || value.toLowerCase() === 'yes';
 };
 
+
+export const mapAcademicTerm = (row: GoogleSheetRow): AcademicTerm => ({
+  id: required(row, 'id', 'AcademicTerms'),
+  academicYear: required(row, 'academic_year', 'AcademicTerms'),
+  semester: required(row, 'semester', 'AcademicTerms'),
+  label: required(row, 'label', 'AcademicTerms'),
+  isCurrent: booleanValue(row.is_current, false),
+  active: booleanValue(row.active),
+});
+
 export const mapSubject = (row: GoogleSheetRow): Subject => ({
   id: required(row, 'id', 'Subjects'),
   code: required(row, 'code', 'Subjects'),
@@ -27,6 +38,8 @@ export const mapSubject = (row: GoogleSheetRow): Subject => ({
   description: optional(row, 'description'),
   color: optional(row, 'color'),
   active: booleanValue(row.active),
+  academicYear: optional(row, 'academic_year'),
+  semester: optional(row, 'semester'),
 });
 
 export const mapDocument = (row: GoogleSheetRow): DocumentItem => ({
@@ -38,6 +51,8 @@ export const mapDocument = (row: GoogleSheetRow): DocumentItem => ({
   url: required(row, 'url', 'Documents'),
   updatedAt: required(row, 'updated_at', 'Documents'),
   active: booleanValue(row.active),
+  academicYear: optional(row, 'academic_year'),
+  semester: optional(row, 'semester'),
 });
 
 export const mapRecording = (row: GoogleSheetRow): Recording => ({
@@ -50,6 +65,8 @@ export const mapRecording = (row: GoogleSheetRow): Recording => ({
   url: required(row, 'url', 'Recordings'),
   recordedAt: required(row, 'recorded_at', 'Recordings'),
   active: booleanValue(row.active),
+  academicYear: optional(row, 'academic_year'),
+  semester: optional(row, 'semester'),
 });
 
 export const mapSchedule = (row: GoogleSheetRow): ScheduleItem => ({
@@ -60,6 +77,8 @@ export const mapSchedule = (row: GoogleSheetRow): ScheduleItem => ({
   endTime: required(row, 'end_time', 'Schedule'),
   room: optional(row, 'room'),
   active: booleanValue(row.active),
+  academicYear: optional(row, 'academic_year'),
+  semester: optional(row, 'semester'),
 });
 
 export const mapAnnouncement = (row: GoogleSheetRow): Announcement => ({
@@ -69,4 +88,6 @@ export const mapAnnouncement = (row: GoogleSheetRow): Announcement => ({
   type: required(row, 'type', 'Announcements'),
   publishedAt: required(row, 'published_at', 'Announcements'),
   active: booleanValue(row.active),
+  academicYear: optional(row, 'academic_year'),
+  semester: optional(row, 'semester'),
 });

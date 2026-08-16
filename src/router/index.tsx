@@ -2,6 +2,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import UserLayout from '../layouts/UserLayout/UserLayout';
 import Dashboard from '../pages/user/Dashboard/Dashboard';
 import Subjects from '../pages/user/Subjects/Subjects';
+import SubjectDetail from '../pages/user/SubjectDetail/SubjectDetail';
 import Documents from '../pages/user/Documents/Documents';
 import Recordings from '../pages/user/Recordings/Recordings';
 import Schedule from '../pages/user/Schedule/Schedule';
@@ -16,6 +17,7 @@ export const router = createBrowserRouter([
     children: [
       { index: true, element: <Dashboard /> },
       { path: 'subjects', element: <Subjects /> },
+      { path: 'subjects/:subjectId', element: <SubjectDetail /> },
       { path: 'documents', element: <Documents /> },
       { path: 'recordings', element: <Recordings /> },
       { path: 'schedule', element: <Schedule /> },

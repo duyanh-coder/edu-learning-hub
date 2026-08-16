@@ -1,4 +1,6 @@
-id,code,name,description,color,active
-SUB001,GRAMMAR-2,Ngữ pháp 2,Grammar 2,#2563EB,TRUE
-SUB002,READING-2,Đọc 2,Reading 2,#6366F1,TRUE
-SUB003,LISTENING-2,Nghe nói 2,Listening & Speaking 2,#8B5CF6,TRUE
+id,code,name,description,color,active,academic_year,semester
+SUB001,NG2,Ngữ pháp 2,English Grammar 2,blue,TRUE,2025-2026,HK02
+SUB002,DOC2,Đọc 2,Reading 2,indigo,TRUE,2025-2026,HK02
+SUB003,NS2,Nghe nói 2,Listening & Speaking 2,purple,TRUE,2025-2026,HK02
+SUB004,VIET2,Viết 2,Writing 2,green,TRUE,2025-2026,HK02
+SUB005,CN2,Tiếng Trung 2,Chinese 2,orange,TRUE,2025-2026,HK02
